@@ -28,6 +28,11 @@ namespace GuardaCapitalEuropeia.Controllers
             return View();
         }
 
+        public IActionResult about()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
