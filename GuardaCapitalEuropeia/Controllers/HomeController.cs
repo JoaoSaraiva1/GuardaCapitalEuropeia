@@ -23,6 +23,11 @@ namespace GuardaCapitalEuropeia.Controllers
             return View();
         }
 
+        public IActionResult locations()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
