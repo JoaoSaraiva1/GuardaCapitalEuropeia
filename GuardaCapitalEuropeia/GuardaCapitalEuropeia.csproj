@@ -14,7 +14,7 @@
     <None Include="wwwroot\img\ipad.png" />
     <None Include="wwwroot\img\LOGO2.jpg" />
     <None Include="wwwroot\img\LOGO2.png" />
-    <None Include="wwwroot\img\seGuarda2.jpg" />
+    <None Include="wwwroot\assets\img\seGuarda2.jpg" />
   </ItemGroup>
 
   <ItemGroup>
