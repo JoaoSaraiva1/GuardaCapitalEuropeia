@@ -22,18 +22,18 @@ namespace GuardaCapitalEuropeia.Controllers
         {
             return View();
         }
-
-        public IActionResult locations()
+        [HttpGet]
+        public IActionResult Locations()
         {
             return View();
         }
-
+        [HttpGet]
         public IActionResult Privacy()
         {
             return View();
         }
 
-        public IActionResult about()
+        public IActionResult About()
         {
             return View();
         }
