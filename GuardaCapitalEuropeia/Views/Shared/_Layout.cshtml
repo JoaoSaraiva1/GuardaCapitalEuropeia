@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - GuardaCapitalEuropeia</title>
-    <link rel="icon" type="image/x-icon" href="~/assets/img/favicon.ico/>
+    <link rel="icon" type="image/x-icon" href="~/assets/img/favicon.ico />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="~/css/styles.css" rel="stylesheet" />
+    @RenderSection("Css", required: false)
 </head>
 <body id="page-top">
     <!-- Navigation-->  
@@ -34,7 +35,7 @@
     <!-- Masthead-->
     <header class="masthead">
         <div class="container d-flex h-100 align-items-center">
-            @RenderBody()
+            
         </div>
     </header>
     <!-- About-->
@@ -97,6 +98,10 @@
             </div>
         </div>
 
+        <div class="container">
+            @RenderBody()
+        </div>
+
         <!-- Footer-->
         <footer class="footer bg-black small text-center text-white-50"><div class="container">Copyright © Your Website 2020</div></footer>
         <!-- Bootstrap core JS-->
@@ -106,6 +111,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-
+        @RenderSection("Scripts", required: false)
 </body>
 </html>
