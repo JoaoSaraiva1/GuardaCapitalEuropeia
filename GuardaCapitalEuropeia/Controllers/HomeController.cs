@@ -33,6 +33,11 @@ namespace GuardaCapitalEuropeia.Controllers
             return View();
         }
 
+        public IActionResult Restaurantes()
+        {
+            return View();
+        }
+
         public IActionResult About()
         {
             return View();
