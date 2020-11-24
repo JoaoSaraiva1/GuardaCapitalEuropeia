@@ -2,4 +2,26 @@
     ViewData["Title"] = "Gastroguide Guarda";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<style>
+    body{
+        background-color:black;
+    }
+    .btn-style {
+        color: black;
+        background-color: white;
+        font-weight: bold;
+        box-shadow: 0 9px #999;
+    }
+        .btn-style:hover { background-color: #a7a6a6;}
+        .btn-style:active {
+            background-color: #a7a6a6;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+    a{align-content:center;
+      align-items:center;
+    }
+</style>
+<div style="text-align:center;">
+        <a class="btn btn-style" asp-action="Restaurantes">Restaurantes</a>
+</div>
