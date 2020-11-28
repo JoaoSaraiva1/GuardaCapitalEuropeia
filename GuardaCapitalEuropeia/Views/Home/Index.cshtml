@@ -2,4 +2,85 @@
     ViewData["Title"] = "Gastroguide Guarda";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    body {
+        background-color: black;
+    }
 
+    .btn-style {
+        color: black;
+        background-color: white;
+        font-weight: bold;
+        box-shadow: 0 9px #999;
+    }
+
+        .btn-style:hover {
+            background-color: #a7a6a6;
+        }
+
+        .btn-style:active {
+            background-color: #a7a6a6;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+    a {
+        align-content: center;
+        align-items: center;
+    }
+</style>
+<section>
+    <div style="text-align:center;">
+        <a class="btn btn-style" asp-action="Restaurantes">Restaurantes</a>
+    </div>
+</section>
+
+    <section class="projects-section bg-black" id="projects">
+        <div class="container">
+            <!-- Featured Project Row-->
+            <!-- Project One Row-->
+            <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+                <div class="col-lg-6"><img src="~/img/caçador.jpg" alt="" style="width: 570px; height: 350px" /></div>
+                <div class="col-lg-6">
+                    <div class="bg-gray text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-left">
+                                <h4 class="text-white">Misty</h4>
+                                <p class="mb-0 text-white-50">An example of where you can put an image of a project, or anything else, along with a description.</p>
+                                <hr class="d-none d-lg-block mb-0 ml-0" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Project Two Row-->
+            <div class="row justify-content-center no-gutters">
+                <div class="col-lg-6"><img class="img-fluid" src="~/img/dom-garfo.jpg" alt="" style="width: 570px; height: 350px" /></div>
+                <div class="col-lg-6 order-lg-first">
+                    <div class="bg-gray text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-left">
+                                <h4 class="text-white">Mountains</h4>
+                                <p class="mb-0 text-white-50">Another example of a project with its respective description. These sections work well responsively as well, try this theme on a small screen!</p>
+                                <hr class="d-none d-lg-block mb-0 mr-0" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+                <div class="col-lg-6"><img src="~/img/VALE DO ZEZERE.jpg" alt="" style="width: 580px; height: 390px" /></div>
+                <div class="col-lg-6">
+                    <div class="bg-gray text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-left">
+                                <h4 class="text-white">Restaurante Hotel Vale do Zêzere</h4>
+                                <p class="mb-0 text-white-50">O Hotel Vale do Zêzere situa-se numa das margens do rio Zêzere em pleno coração da Serra da Estrela - Manteigas.<br>desfrutando de uma explendida vista sobre a vila de Manteigas e o Vale Glaciar do Zêzere único na Europa e destacado entre as Maravilhas Naturais de Portugal, sendo finalista na categoria "Grandes Relevos".</p>
+                                <hr class="d-none d-lg-block mb-0 ml-0" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
