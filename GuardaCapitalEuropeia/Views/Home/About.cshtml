@@ -4,7 +4,125 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <style>
-    h1{text-align: center;}
+    h1 {
+        text-align: center;
+        color: white;
+    }
+
+    h4 {
+        color: white
+    }
+
+    h5 {
+        color: white
+    }
+
+    body {
+        background-color: black
+    }
+
+    .img-box {
+        margin: 40px;
+    }
+
+    .avatar-link {
+        display: inline-block;
+        position: relative;
+    }
+
+        .avatar-link::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 14.8%;
+            right: 14.8%;
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            transform: translate(5px, 5px); /* half width and height */
+            border-radius: 50%;
+        }
+
+        .avatar-link img {
+            border-radius: 50%;
+            vertical-align: top;
+        }
 </style>
+
 <h1>Sobre nós</h1>
+<div style="text-align:center;margin-top:50px"> <img src="~/img/LOGO2.png" ; style="width:300px; height:220px; align-content:center" /> </div>
+<div style="text-align:center;margin-top:100px;">
+    <h4>O nosso grupo:</h4>
+    <h5>
+        O nosso grupo é constituido por 5 alunos <br>da licenciatura de engenharia informática<br>
+    </h5>
+</div>
+<section>
+    <div class="row">
+        <div class="col">
+            <div class="img-box" style="text-align:center">
+                <a class="avatar-link" href="#">
+                    João Saraiva
+                    <div class="corner-finder"></div>
+                    <img src="~/img/Saraiva.jpg" style="height:150px; width:150px;" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="col">
+            <div class="img-box" style="text-align:center">
+                <a class="avatar-link" href="#">
+                    Miguel Pereira
+                    <div class="corner-finder"></div>
+                    <img src="~/img/Miguel.jpg" style="height:150px; width:150px;" alt="">
+                </a>
+            </div>
+            </div>
+            <div class="col">
+                <div class="img-box" style="text-align:center">
+                    <a class="avatar-link" href="#">
+                        Pedro Matos
+                        <div class="corner-finder"></div>
+                        <img src="~/img/pedro matos.jpg" style="height:150px; width:150px;" alt="">
+                    </a>
+                </div>
+            </div>
+    </div>
+    <div class="row" style="margin-top:50px;">
+        <div class="col">
+            <div class="img-box" style="text-align:center">
+                <a class="avatar-link" href="#">
+                    Pedro Soares
+                    <div class="corner-finder"></div>
+                    <img src="~/img/pedro soares.jpg" style="height:150px; width:150px;" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="col">
+            <div class="img-box" style="text-align:center">
+                <a class="avatar-link" href="#">
+                    Vitor Pereira
+                    <div class="corner-finder"></div>
+                    <img src="~/img/vito.jpg" style="height:150px; width:150px;" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<section class="signup-section" id="signup" style="margin-top:150px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 mx-auto text-center">
+                <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+                <h2 class="text-white mb-5">Subscreva para receberer as noticias mais recentes!</h2>
+                <form class="form-inline d-flex">
+                    <input class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" type="email" placeholder="Enter email address..." />
+                    <button class="btn btn-primary mx-auto" type="submit">Subscrever</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 
