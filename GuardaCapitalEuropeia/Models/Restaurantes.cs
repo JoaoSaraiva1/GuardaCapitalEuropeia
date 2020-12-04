@@ -8,11 +8,13 @@ namespace GuardaCapitalEuropeia.Models
 {
     public class Restaurantes
     {
-        public int AuthorId { get; set; }
+        public int RestaurantesId { get; set; }
 
         [Required]
-        [StringLength(256)]
+        [StringLength(100)]
         public string Name { get; set; }
+
+        public string Description { get; set; }
 
     }
 }
