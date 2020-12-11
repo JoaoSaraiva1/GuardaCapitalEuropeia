@@ -13,11 +13,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Views\Restaurantes\Create.cshtml" />
-    <None Include="Views\Restaurantes\Delete.cshtml" />
-    <None Include="Views\Restaurantes\Details.cshtml" />
-    <None Include="Views\Restaurantes\Edit.cshtml" />
-    <None Include="Views\Restaurantes\Index.cshtml" />
+    <Content Include="Views\Restaurantes\Create.cshtml" />
+    <Content Include="Views\Restaurantes\Delete.cshtml" />
+    <Content Include="Views\Restaurantes\Details.cshtml" />
+    <Content Include="Views\Restaurantes\Edit.cshtml" />
+    <Content Include="Views\Restaurantes\Index.cshtml" />
     <None Include="wwwroot\img\bg-masthead.jpg" />
     <None Include="wwwroot\img\bg-signup.jpg" />
     <None Include="wwwroot\img\demo-image-01.jpg" />
