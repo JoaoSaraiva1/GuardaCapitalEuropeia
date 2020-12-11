@@ -1,11 +1,22 @@
 ﻿@model IEnumerable<GuardaCapitalEuropeia.Models.Restaurantes>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Restaurantes";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    body{
+        background-color:black;
+    }
+    table {
+        background-color: #353636;
+    }
+    th{
+        color:white;
+    }
+</style>
 
-<h1>Index</h1>
+
 
 <p>Restaurantes
     <a asp-action="Create">Create New</a>
