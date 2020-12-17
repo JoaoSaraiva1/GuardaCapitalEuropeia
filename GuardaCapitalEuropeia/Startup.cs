@@ -37,6 +37,9 @@ namespace GuardaCapitalEuropeia
 
             services.AddDbContext<RestaurantesContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("RestaurantesContext")));
+
+            services.AddDbContext<TakeAwayContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("TakeAwayContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
