@@ -30,6 +30,18 @@
             <th>
                 @Html.DisplayNameFor(model => model.Description)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contact)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LimitMax)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -42,6 +54,19 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contact)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LimitMax)
+            </td>
+
             <td>
                 <a asp-action="Edit" asp-route-id="@item.RestaurantesId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.RestaurantesId">Details</a> |
