@@ -16,5 +16,15 @@ namespace GuardaCapitalEuropeia.Models
 
         public string Description { get; set; }
 
+        public int Contacto { get; set; }
+
+        public int Contact { get; set; }
+
+        public string Email { get; set; }
+
+        public string Location { get; set; }
+
+        public int LimitMax { get; set; }
+
     }
 }
