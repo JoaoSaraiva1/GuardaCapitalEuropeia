@@ -54,7 +54,7 @@ namespace GuardaCapitalEuropeia.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("RestaurantesId,Name,Description")] Restaurantes restaurantes)
+        public async Task<IActionResult> Create([Bind("RestaurantesId,Name,Description,Contact,Email,Location,LimitMax")] Restaurantes restaurantes)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace GuardaCapitalEuropeia.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("RestaurantesId,Name,Description")] Restaurantes restaurantes)
+        public async Task<IActionResult> Edit(int id, [Bind("RestaurantesId,Name,Description,Contact,Email,Location,LimitMax")] Restaurantes restaurantes)
         {
             if (id != restaurantes.RestaurantesId)
             {
