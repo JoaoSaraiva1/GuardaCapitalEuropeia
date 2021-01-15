@@ -38,7 +38,7 @@ namespace GuardaCapitalEuropeia
             services.AddDbContext<RestaurantesContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("RestaurantesContext")));
 
-            services.AddDbContext<TakeAwayContext>(options =>
+            services.AddDbContext<RestaurantesContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("TakeAwayContext")));
         }
 
