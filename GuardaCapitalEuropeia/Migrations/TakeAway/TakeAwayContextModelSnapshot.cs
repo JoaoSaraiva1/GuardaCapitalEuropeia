@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GuardaCapitalEuropeia.Migrations.TakeAway
 {
-    [DbContext(typeof(TakeAwayContext))]
+    [DbContext(typeof(RestaurantesContext))]
     partial class TakeAwayContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

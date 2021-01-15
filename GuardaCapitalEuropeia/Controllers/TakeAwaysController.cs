@@ -12,9 +12,9 @@ namespace GuardaCapitalEuropeia.Controllers
 {
     public class TakeAwaysController : Controller
     {
-        private readonly TakeAwayContext _context;
+        private readonly RestaurantesContext _context;
 
-        public TakeAwaysController(TakeAwayContext context)
+        public TakeAwaysController(RestaurantesContext context)
         {
             _context = context;
         }

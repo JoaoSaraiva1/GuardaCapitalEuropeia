@@ -3,14 +3,16 @@ using GuardaCapitalEuropeia.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GuardaCapitalEuropeia.Migrations
 {
     [DbContext(typeof(RestaurantesContext))]
-    partial class RestaurantesContextModelSnapshot : ModelSnapshot
+    [Migration("20210115115028_Restaurantes4")]
+    partial class Restaurantes4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

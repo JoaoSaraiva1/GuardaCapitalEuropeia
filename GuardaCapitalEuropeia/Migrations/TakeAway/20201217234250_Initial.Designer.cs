@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GuardaCapitalEuropeia.Migrations.TakeAway
 {
-    [DbContext(typeof(TakeAwayContext))]
+    [DbContext(typeof(RestaurantesContext))]
     [Migration("20201217234250_Initial")]
     partial class Initial
     {
