@@ -11,6 +11,10 @@
     "mssql3": {
       "type": "mssql",
       "connectionId": "TakeAwayContext"
+    },
+    "mssql4": {
+      "type": "mssql",
+      "connectionId": "paginationContext"
     }
   }
 }
