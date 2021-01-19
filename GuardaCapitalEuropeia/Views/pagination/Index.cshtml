@@ -1,26 +1,18 @@
 ﻿@model IEnumerable<GuardaCapitalEuropeia.Models.Restaurantes>
 
 @{
-    //ViewData["Title"] = "Restaurantes";
-    //Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
 }
-   
-<style>
-    
-    body{
-        background-color:black;
-    }
-    table {
-        background-color: #353636;
-    }
-    th{
-        color:white;
-    }
-</style>
 
+<!DOCTYPE html>
 
-
-<p>Restaurantes
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<p>
     <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
@@ -31,6 +23,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contacto)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Contact)
@@ -57,6 +52,9 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Contacto)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Contact)
             </td>
             <td>
@@ -68,7 +66,6 @@
             <td>
                 @Html.DisplayFor(modelItem => item.LimitMax)
             </td>
-
             <td>
                 <a asp-action="Edit" asp-route-id="@item.RestaurantesId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.RestaurantesId">Details</a> |
@@ -78,3 +75,5 @@
 }
     </tbody>
 </table>
+</body>
+</html>
