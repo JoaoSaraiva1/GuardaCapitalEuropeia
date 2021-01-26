@@ -150,31 +150,5 @@ namespace GuardaCapitalEuropeia.Controllers
             return _context.Restaurantes.Any(e => e.RestaurantesId == id);
         }
     }
-    private RestaurantesContext repository;
-
-    public RestaurantesController (RestaurantesContext repository)
-    {
-        this.repository = repository;
-    }
-    public IActionResult Index(string name = null, int page = 1)
-    {
-        var pagination = new PaginationInfo
-        {
-            CurrentPage = page,
-            PageSize = PaginationInfo.DEFAULT_PAGE_SIZE,
-            TotalItems = repository.Products.Where(p => name == null || p.Name.Contains(name)).Count()
-        };
-
-        return View(
-            new RestaurantesListView
-            {
-                Restaurantes = repository.Products.Where(p => name == null || p.Name.Contains(name))
-                    .OrderBy(p => p.Price)
-                    .Skip((page - 1) * pagination.PageSize)
-                    .Take(pagination.PageSize),
-                Pagination = pagination,
-                SearchName = name
-            }
-        );
-    }
+  
 }
