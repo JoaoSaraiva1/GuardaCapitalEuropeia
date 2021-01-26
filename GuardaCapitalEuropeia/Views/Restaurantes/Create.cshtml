@@ -1,29 +1,53 @@
 ﻿@model GuardaCapitalEuropeia.Models.Restaurantes
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Introduza o seu restaurante";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <style>
     body {
         background-color: black;
+        text-align: center;
     }
 
     table {
         background-color: #353636;
+        text-align: center;
     }
 
     th {
         color: white;
     }
+    .center{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .btn-style {
+        color: black;
+        background-color: white;
+        font-weight: bold;
+        box-shadow: 0 9px #999;
+    }
+
+        .btn-style:hover {
+            background-color: #a7a6a6;
+        }
+
+        .btn-style:active {
+            background-color: #a7a6a6;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+        h
 </style>
 
-<h1>Create</h1>
+<h1 style="color:white">Introduzir</h1>
 
-<h4>Restaurantes</h4>
+<h4 style="color:white">Restaurante</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 center">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -57,7 +81,7 @@
                 <span asp-validation-for="LimitMax" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-style" />
             </div>
         </form>
     </div>
