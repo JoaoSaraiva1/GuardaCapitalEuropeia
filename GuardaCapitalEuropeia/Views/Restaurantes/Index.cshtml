@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<GuardaCapitalEuropeia.Models.Restaurantes>
 
 @{
-    //ViewData["Title"] = "Restaurantes";
+    ViewData["Title"] = "Lista Restaurantes";
     //Layout = "~/Views/Shared/_Layout.cshtml";
 }
    
@@ -16,12 +16,22 @@
     th{
         color:white;
     }
+    p {
+        color: white;
+        margin-left:30px;
+    }
+    tr{
+        color:white;
+    }
+    a {
+        color:lightslategray
+    }
 </style>
 
 
 
 <p>Restaurantes
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Criar novo</a>
 </p>
 <table class="table">
     <thead>
