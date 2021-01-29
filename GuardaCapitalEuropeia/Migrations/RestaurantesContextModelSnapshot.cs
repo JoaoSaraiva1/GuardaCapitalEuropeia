@@ -18,6 +18,32 @@ namespace GuardaCapitalEuropeia.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("GuardaCapitalEuropeia.Models.Evento", b =>
+                {
+                    b.Property<int>("EventoId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Entrada")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Localizacao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(200)")
+                        .HasMaxLength(200);
+
+                    b.HasKey("EventoId");
+
+                    b.ToTable("Evento");
+                });
+
             modelBuilder.Entity("GuardaCapitalEuropeia.Models.Prato", b =>
                 {
                     b.Property<int>("PratoID")
