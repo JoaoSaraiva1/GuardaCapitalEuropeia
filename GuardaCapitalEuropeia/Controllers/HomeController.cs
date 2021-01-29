@@ -42,7 +42,7 @@ namespace GuardaCapitalEuropeia.Controllers
         {
             return View();
         }
-        public IActionResult TakeAway()
+        public IActionResult Evento()
         {
             return View();
         }

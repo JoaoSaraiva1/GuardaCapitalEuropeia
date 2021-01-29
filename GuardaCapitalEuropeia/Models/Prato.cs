@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace GuardaCapitalEuropeia.Models
 {
-    public class PratosModel
-    {
-        public int PratosID { get; set; }
+    public class Prato{
+        public int PratoID { get; set; }
 
         [Required]
         [StringLength(200)]

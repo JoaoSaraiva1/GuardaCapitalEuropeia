@@ -18,7 +18,9 @@ namespace GuardaCapitalEuropeia.Data
 
         public DbSet<GuardaCapitalEuropeia.Models.TakeAway> TakeAway{ get; set; }
 
-        public DbSet<GuardaCapitalEuropeia.Models.PratosModel> Pratos { get; set; }
+        public DbSet<GuardaCapitalEuropeia.Models.Prato> Prato { get; set; }
+
+        public DbSet<GuardaCapitalEuropeia.Models.Evento> Evento { get; set; }
     }
       
 }

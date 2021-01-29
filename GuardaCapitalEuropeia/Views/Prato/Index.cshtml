@@ -1,0 +1,86 @@
+﻿@model IEnumerable<GuardaCapitalEuropeia.Models.Prato>
+
+@{
+    ViewData["Title"] = "Prato";
+}
+<style>
+    body {
+        background-color: black;
+    }
+
+    table {
+        background-color: #353636;
+    }
+
+    th {
+        color: white;
+    }
+
+    p {
+        color: white;
+        margin-left: 30px;
+    }
+
+    tr {
+        color: white;
+    }
+
+    a {
+        color: lightslategray
+    }
+
+</style>
+
+<h1>Prato</h1>
+
+<p>
+    <a asp-action="Create">Criar Novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Preco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Alergénicos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RestauranteId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Preco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Alergénicos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RestauranteId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PratoID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PratoID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PratoID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
