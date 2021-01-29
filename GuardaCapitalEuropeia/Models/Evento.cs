@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GuardaCapitalEuropeia.Models
 {
-    public class Eventos
+    public class Evento
     {   
         public int EventoId { get; set; }
 
