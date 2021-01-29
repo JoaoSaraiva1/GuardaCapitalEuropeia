@@ -17,6 +17,8 @@ namespace GuardaCapitalEuropeia.Data
         public DbSet<GuardaCapitalEuropeia.Models.Restaurantes> Restaurantes { get; set; }
 
         public DbSet<GuardaCapitalEuropeia.Models.TakeAway> TakeAway{ get; set; }
+
+        public DbSet<GuardaCapitalEuropeia.Models.PratosModel> Pratos { get; set; }
     }
       
 }

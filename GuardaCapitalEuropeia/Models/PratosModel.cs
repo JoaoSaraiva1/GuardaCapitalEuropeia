@@ -11,14 +11,17 @@ namespace GuardaCapitalEuropeia.Models
         public int PratosID { get; set; }
 
         [Required]
-        [StringLength(100)]
+        [StringLength(200)]
         public string Name{ get; set; }
+
         
         public string Description { get; set; }
 
         public string Preco { get; set; }
 
         public string Alergénicos { get; set; }
-    
+
+        public string RestauranteId { get; set; }
+
     }
 }
