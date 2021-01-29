@@ -20,5 +20,7 @@ namespace GuardaCapitalEuropeia.Models
         public String Descricao { get; set; }
 
         public String Entrada { get; set; }
+
+        public String Link { get; set; }
     }
 }
