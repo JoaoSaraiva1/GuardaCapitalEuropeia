@@ -12,23 +12,26 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace GuardaCapitalEuropeia.Controllers
 {
-    public class RestaurantesController : Controller
+    public class TouristsController : Controller
     {
         private readonly RestaurantesContext _context;
-        private object _userManager;
+        private readonly UserManager<IdentityUser> _userManager;
+       
 
-        public RestaurantesController(RestaurantesContext context)
+        public TouristsController(RestaurantesContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
-        // GET: Restaurantes
+        // GET: Tourists
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Restaurantes.ToListAsync());
+            return View(await _context.Tourist.ToListAsync());
         }
 
-        // GET: Restaurantes/Details/5
+        // GET: Tourists/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -36,39 +39,64 @@ namespace GuardaCapitalEuropeia.Controllers
                 return NotFound();
             }
 
-            var restaurantes = await _context.Restaurantes
-                .FirstOrDefaultAsync(m => m.RestaurantesId == id);
-            if (restaurantes == null)
+            var tourist = await _context.Tourist
+                .FirstOrDefaultAsync(m => m.TouristId == id);
+            if (tourist == null)
             {
                 return NotFound();
             }
 
-            return View(restaurantes);
+            return View(tourist);
         }
 
-        // GET: Restaurantes/Create
-        public IActionResult Create()
+        // GET: Tourists/Create
+        public IActionResult Register()
         {
             return View();
         }
 
-        // POST: Restaurantes/Create
+        // POST: Tourists/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("RestaurantesId,Name,Description,Contact,Email,Location,LimitMax")] Restaurantes restaurantes)
+        public async Task<IActionResult> Register(RegisterUserViewModel tourist)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(restaurantes);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return View(tourist);
             }
-            return View(restaurantes);
-        }
+            string username = tourist.Email;
+            IdentityUser user = await _userManager.FindByNameAsync(username);
 
-        // GET: Restaurantes/Edit/5
+            if (user != null)
+            {
+                ModelState.AddModelError("Email", "There is already a tourist with that email");
+                return View(tourist);
+            }
+            user = new IdentityUser(username);
+            await _userManager.CreateAsync(user, tourist.Password);
+            await _userManager.AddToRoleAsync(user, "Tourist");
+
+            Tourist tourist = new Tourist
+            {
+                Nome = tourist.Nome,
+                Email = tourist.Email
+            };
+            _context.Add(customer);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index), "Home");
+        }
+        //FIQUEI AQUI
+        //FIQUEI AQUI
+        //FIQUEI AQUI
+        //FIQUEI AQUI
+        //FIQUEI AQUI
+        //FIQUEI AQUI
+        //FIQUEI AQUI
+        //FIQUEI AQUI
+
+        // GET: Tourists/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -76,22 +104,22 @@ namespace GuardaCapitalEuropeia.Controllers
                 return NotFound();
             }
 
-            var restaurantes = await _context.Restaurantes.FindAsync(id);
-            if (restaurantes == null)
+            var tourist = await _context.Tourist.FindAsync(id);
+            if (tourist == null)
             {
                 return NotFound();
             }
-            return View(restaurantes);
+            return View(tourist);
         }
 
-        // POST: Restaurantes/Edit/5
+        // POST: Tourists/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("RestaurantesId,Name,Description,Contact,Email,Location,LimitMax")] Restaurantes restaurantes)
+        public async Task<IActionResult> Edit(int id, [Bind("TouristId,Nome,Email")] Tourist tourist)
         {
-            if (id != restaurantes.RestaurantesId)
+            if (id != tourist.TouristId)
             {
                 return NotFound();
             }
@@ -100,12 +128,12 @@ namespace GuardaCapitalEuropeia.Controllers
             {
                 try
                 {
-                    _context.Update(restaurantes);
+                    _context.Update(tourist);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!RestaurantesExists(restaurantes.RestaurantesId))
+                    if (!TouristExists(tourist.TouristId))
                     {
                         return NotFound();
                     }
@@ -116,10 +144,10 @@ namespace GuardaCapitalEuropeia.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(restaurantes);
+            return View(tourist);
         }
 
-        // GET: Restaurantes/Delete/5
+        // GET: Tourists/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -127,34 +155,30 @@ namespace GuardaCapitalEuropeia.Controllers
                 return NotFound();
             }
 
-            var restaurantes = await _context.Restaurantes
-                .FirstOrDefaultAsync(m => m.RestaurantesId == id);
-            if (restaurantes == null)
+            var tourist = await _context.Tourist
+                .FirstOrDefaultAsync(m => m.TouristId == id);
+            if (tourist == null)
             {
                 return NotFound();
             }
 
-            return View(restaurantes);
+            return View(tourist);
         }
 
-        // POST: Restaurantes/Delete/5
+        // POST: Tourists/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var restaurantes = await _context.Restaurantes.FindAsync(id);
-            _context.Restaurantes.Remove(restaurantes);
+            var tourist = await _context.Tourist.FindAsync(id);
+            _context.Tourist.Remove(tourist);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool RestaurantesExists(int id)
+        private bool TouristExists(int id)
         {
-            return _context.Restaurantes.Any(e => e.RestaurantesId == id);
-        }      
-
-
+            return _context.Tourist.Any(e => e.TouristId == id);
+        }
     }
-
-   
 }
