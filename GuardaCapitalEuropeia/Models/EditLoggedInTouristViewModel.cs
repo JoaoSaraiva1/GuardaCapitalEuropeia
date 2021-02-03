@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GuardaCapitalEuropeia.Models
 {
-    public class EditLoggedInTouristViweModel
+    public class EditLoggedInTouristViewModel
     {
         [Required]
         [StringLength(128)]
