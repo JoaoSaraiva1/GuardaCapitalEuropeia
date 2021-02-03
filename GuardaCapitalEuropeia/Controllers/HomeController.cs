@@ -46,6 +46,10 @@ namespace GuardaCapitalEuropeia.Controllers
         {
             return View();
         }
+        public IActionResult Prato()
+        {
+            return View();
+        }
 
         [HttpGet]
 
