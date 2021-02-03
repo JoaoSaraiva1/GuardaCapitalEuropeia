@@ -60,41 +60,59 @@ namespace GuardaCapitalEuropeia.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register(RegisterUserViewModel tourist)
+        public async Task<IActionResult> Register(RegisterUserViewModel touristInfo)
         {
             if (ModelState.IsValid)
             {
-                return View(tourist);
+                return View(touristInfo);
             }
-            string username = tourist.Email;
+            string username = touristInfo.Email;
             IdentityUser user = await _userManager.FindByNameAsync(username);
 
             if (user != null)
             {
                 ModelState.AddModelError("Email", "There is already a tourist with that email");
-                return View(tourist);
+                return View(touristInfo);
             }
             user = new IdentityUser(username);
-            await _userManager.CreateAsync(user, tourist.Password);
+            await _userManager.CreateAsync(user, touristInfo.Password);
             await _userManager.AddToRoleAsync(user, "Tourist");
 
             Tourist tourist = new Tourist
             {
-                Nome = tourist.Nome,
-                Email = tourist.Email
+                Nome = touristInfo.Nome,
+                Email = touristInfo.Email
             };
-            _context.Add(customer);
+            _ = _context.Add(tourist);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index), "Home");
         }
-        //FIQUEI AQUI
-        //FIQUEI AQUI
-        //FIQUEI AQUI
-        //FIQUEI AQUI
-        //FIQUEI AQUI
-        //FIQUEI AQUI
-        //FIQUEI AQUI
-        //FIQUEI AQUI
+
+        [Authorize(Roles = "Toutist")]
+        public async Task<IActionResult> EditPersonalData()
+        {
+            string email = User.Identity.Name;
+            var tourist = await _context.Tourist.SingleOrDefaultAsync(t => t.Email == email);
+            if (tourist == null)
+            {
+                return NotFound();
+            }
+
+            EditLoggedInTouristViweModel touristInfo = new EditLoggedInTouristViweModel
+            {
+                Nome = tourist.Nome,
+                Email = tourist.Email
+            };
+            return View(touristInfo);
+
+            //Fiquei aqui
+            //Fiquei aqui
+            //Fiquei aqui
+            //Fiquei aqui
+            //Fiquei aqui
+            //Fiquei aqui
+            //Fiquei aqui
+        }
 
         // GET: Tourists/Edit/5
         public async Task<IActionResult> Edit(int? id)
