@@ -1,0 +1,104 @@
+﻿@model GuardaCapitalEuropeia.Models.Mesa
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<style>
+    body {
+        background-color: black;
+        text-align: center;
+    }
+
+    table {
+        background-color: #353636;
+        text-align: center;
+    }
+
+    th {
+        color: white;
+    }
+
+    .center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .whiteout {
+        color: white;
+    }
+
+    h1 {
+        color: white;
+        text-align: center;
+    }
+
+    h3 {
+        color: white;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    h4 {
+        color: white;
+        text-align: center;
+    }
+
+    a {
+        color: white;
+    }
+
+    .btn-style {
+        color: black;
+        background-color: white;
+        font-weight: bold;
+        box-shadow: 0 9px #999;
+    }
+
+        .btn-style:hover {
+            background-color: #a7a6a6;
+        }
+
+        .btn-style:active {
+            background-color: #a7a6a6;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+</style>
+<h1>Create</h1>
+
+<h4>Mesa</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4 center whiteout">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Numero" class="control-label"></label>
+                <input asp-for="Numero" class="form-control" />
+                <span asp-validation-for="Numero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Restaurante" class="control-label"></label>
+                <input asp-for="Restaurante" class="form-control" />
+                <span asp-validation-for="Restaurante" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lugares" class="control-label"></label>
+                <input asp-for="Lugares" class="form-control" />
+                <span asp-validation-for="Lugares" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
