@@ -1,0 +1,84 @@
+﻿@model GuardaCapitalEuropeia.Models.Mesa
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<style>
+    body {
+        background-color: black;
+    }
+
+    table {
+        background-color: #353636;
+    }
+
+    th {
+        color: white;
+    }
+    h1 {
+        color: white;
+        text-align:center;
+    }
+
+    h2 {
+        color: white;
+        text-align: center;
+    }
+
+    h4 {
+        color: white;
+        text-align: center;
+    }
+    .btn-style {
+        color: black;
+        background-color: white;
+        font-weight: bold;
+        box-shadow: 0 9px #999;
+    }
+
+    .btn-style:hover {
+            background-color: #a7a6a6;
+        }
+
+    .btn-style:active {
+            background-color: #a7a6a6;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+    a {
+        align-content: center;
+        align-items: center;
+    }
+</style>
+<h1>Details</h1>
+
+<div>
+    <h4>Mesa</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Numero)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Restaurante)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Restaurante)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Lugares)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Lugares)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.MesaId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
