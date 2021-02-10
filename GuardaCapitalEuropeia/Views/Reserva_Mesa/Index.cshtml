@@ -1,0 +1,82 @@
+﻿@model IEnumerable<GuardaCapitalEuropeia.Models.Reserva_Mesa>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<style>
+
+    body {
+        background-color: black;
+    }
+
+    table {
+        background-color: #353636;
+    }
+
+    th {
+        color: white;
+    }
+
+    p {
+        color: white;
+        margin-left: 30px;
+    }
+
+    tr {
+        color: white;
+    }
+
+    a {
+        color: lightslategray
+    }
+</style>
+
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Numero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Data_Reserva)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hora_Reserva)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pessoas)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Numero)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Data_Reserva)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hora_Reserva)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pessoas)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Reserva_MesaId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Reserva_MesaId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Reserva_MesaId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
