@@ -1,0 +1,72 @@
+﻿@model GuardaCapitalEuropeia.Models.Mesa
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<style>
+    body {
+        background-color: black;
+    }
+
+    table {
+        background-color: #353636;
+    }
+
+    th {
+        color: white;
+    }
+
+    h1 {
+        color: white;
+        text-align: center;
+    }
+
+    h2 {
+        color: white;
+        text-align: center;
+    }
+
+    h4 {
+        color: white;
+        text-align: center;
+    }
+</style>
+
+<h1>Edit</h1>
+
+<h4>Mesa</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MesaId" />
+            <div class="form-group">
+                <label asp-for="Numero" class="control-label"></label>
+                <input asp-for="Numero" class="form-control" />
+                <span asp-validation-for="Numero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Restaurante" class="control-label"></label>
+                <input asp-for="Restaurante" class="form-control" />
+                <span asp-validation-for="Restaurante" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lugares" class="control-label"></label>
+                <input asp-for="Lugares" class="form-control" />
+                <span asp-validation-for="Lugares" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

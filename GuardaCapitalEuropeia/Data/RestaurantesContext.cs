@@ -24,6 +24,8 @@ namespace GuardaCapitalEuropeia.Data
 
         public DbSet<GuardaCapitalEuropeia.Models.Tourist> Tourist { get; set; }
 
+
+        public DbSet<GuardaCapitalEuropeia.Models.Mesa> Mesa { get; set; }
         public DbSet<GuardaCapitalEuropeia.Models.Reserva_Mesa> Reserva_Mesa { get; set; }
     }
       
