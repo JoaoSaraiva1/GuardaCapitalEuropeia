@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<GuardaCapitalEuropeia.Models.Reserva_Mesa>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Reservas";
 }
 <style>
 
@@ -32,10 +32,10 @@
 </style>
 
 
-<h1>Index</h1>
+<h1>Reservas</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Criar nova Reserva</a>
 </p>
 <table class="table">
     <thead>
@@ -72,9 +72,9 @@
                     @Html.DisplayFor(modelItem => item.Pessoas)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Reserva_MesaId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Reserva_MesaId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Reserva_MesaId">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.Reserva_MesaId">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.Reserva_MesaId">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Reserva_MesaId">Apagar</a>
                 </td>
             </tr>
         }

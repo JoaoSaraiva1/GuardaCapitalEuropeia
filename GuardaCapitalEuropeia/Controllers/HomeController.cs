@@ -50,6 +50,14 @@ namespace GuardaCapitalEuropeia.Controllers
         {
             return View();
         }
+        public IActionResult Mesas()
+        {
+            return View();
+        }
+        public IActionResult Reserva_Mesa()
+        {
+            return View();
+        }
 
         [HttpGet]
 
