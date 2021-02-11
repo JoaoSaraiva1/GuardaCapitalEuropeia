@@ -32,5 +32,6 @@ namespace GuardaCapitalEuropeia.Models
         [Required(ErrorMessage = "Por favor introduza a sua Lotação")]
         public int LimitMax { get; set; }
 
+
     }
 }
